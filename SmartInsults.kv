@@ -1,0 +1,50 @@
+<MainLayout>:
+    orientation: "vertical"
+    padding: 20
+    spacing: 15
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "./images/background.png"
+
+    TextInput:
+        id: name_input
+        text: "Name. (Optional)"
+        multiline: False
+        size_hint: 1, 0.5
+        on_text_validate: root.check_name(self)
+        background_color: 1, 1, 1, 1
+        background_normal: ''
+        background_active: ''
+        background_disabled: ''
+        font_name: "./fonts/Helvetica.ttf"
+        font_size: "25"
+
+    TextInput:
+        id: surname_input
+        text: "Surname. (Optional)"
+        multiline: False
+        size_hint: 1, 0.5
+        background_color: 1, 1, 1, 1
+        background_normal: ''
+        background_active: ''
+        background_disabled: ''
+        font_name: "./fonts/Helvetica.ttf"
+        font_size: "25"
+
+    Button:
+        text: "Submit"
+        size_hint: 1, 0.5
+        on_press: root.alghoritm()
+        background_color: 0.212, 0.271, 0.31
+        font_name: "./fonts/Helvetica.ttf"
+        font_size: "25"
+
+    Label:
+        text: root.LabelText
+        color: 0,0,0
+        font_name: "./fonts/Helvetica.ttf"
+        font_size: "25"
+        multiline: True
